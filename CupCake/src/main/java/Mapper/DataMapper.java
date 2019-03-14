@@ -25,6 +25,11 @@ public class DataMapper {
 
     private dbconnector connector;
 
+    /**
+     * Get all the info from a specific user by using a string user to find the username of the user.
+     * @param user
+     * @return
+     */
     public user getInfo(String user) {
         int iduser = 0;
         String username = "";
@@ -53,6 +58,12 @@ public class DataMapper {
 
     }
 
+    /**
+     * insert a user to the database.
+     * @param username
+     * @param password
+     * @param balance
+     */
     public void insertUser(String username, String password, int balance) {
         try {
             dbconnector connection = new dbconnector();
@@ -69,6 +80,10 @@ public class DataMapper {
 
     }
 
+    /**
+     * get all the bottoms and prices into an arraylist.
+     * @return
+     */
     public ArrayList<Bottom> getBottom() {
         ArrayList<Bottom> bottomlist = new ArrayList<>();
         try {
@@ -91,6 +106,10 @@ public class DataMapper {
         return bottomlist;
     }
 
+    /**
+     * get all the toppings and prices into an arraylist.
+     * @return
+     */
     public ArrayList<topping> getTopping() {
         ArrayList<topping> toppinglist = new ArrayList<>();
         try {
@@ -113,6 +132,11 @@ public class DataMapper {
         return toppinglist;
     }
 
+    /**
+     * get a specific bottom.
+     * @param bottom
+     * @return
+     */
     public Bottom getBot(String bottom) {
         String f = "";
         int p = 0;
@@ -137,6 +161,11 @@ public class DataMapper {
         return new Bottom(f,p);
     }
     
+    /**
+     * get a specific topping.
+     * @param topping
+     * @return
+     */
     public topping getTop(String topping) {
         String f = "";
         int p = 0;
@@ -158,7 +187,14 @@ public class DataMapper {
         }
         return new topping(f,p);
     }
-      public int setBala(int b, String username) {
+
+    /**
+     * set a balance of a user.
+     * @param b
+     * @param username
+     * @return
+     */
+    public int setBala(int b, String username) {
         
         int bala = 0;
         try {

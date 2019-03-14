@@ -1,4 +1,4 @@
-package DB;
+ package DB;
 
 
 import java.sql.Connection;
@@ -16,17 +16,31 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ *
+ * @author shpattt
+ */
 public class dbconnector {
 
     private Connection connection = null;
 	
     private static final String IP = "127.0.0.1";
     private static final String PORT = "3306";
+
+    /**
+     * "DATABASE" which database to connect.
+     * "USERNAME" username of the owner.
+     * "password" password of the owner.
+     */
     public static final String DATABASE = "cupcake";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "johnjohn";
 
-     public dbconnector() throws SQLException {
+    /**
+     * Connecting magic.
+     * @throws SQLException
+     */
+    public dbconnector() throws SQLException {
      try
      {
         Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -48,7 +62,10 @@ public class dbconnector {
         }
      }
      
-
+    /**
+     * 
+     * @return
+     */
     public Connection getConnection() {
         return this.connection;
     }

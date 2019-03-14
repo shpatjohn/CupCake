@@ -12,10 +12,17 @@ import Mapper.DataMapper;
  * @author shpattt
  */
 public class CupCake {
-    DataMapper data = new DataMapper();
+    //DataMapper data = new DataMapper();
     //int price;
-    topping t;
-    Bottom m;
+    //topping t;
+    // Bottom m;
+
+    /**
+     * calculates the total price.
+     * @param toppingprice
+     * @param bottomprice
+     * @return
+     */
     
      public int TotalPrice(int toppingprice, int bottomprice)
      { 
